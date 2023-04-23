@@ -1,0 +1,83 @@
+﻿@model DonorsControllerVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Register New Donor</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+                <select asp-for="Gender" class="form-control" asp-items="ViewBag.Gender">
+                            <option> </option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                            </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BloodGroupNameId" class="control-label"></label>
+                <input asp-for="BloodGroupNameId" class="form-control" />
+                <span asp-validation-for="BloodGroupNameId" class="text-danger"></span>
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="LastDonationDate" class="control-label"></label>
+                <input asp-for="LastDonationDate" class="form-control" />
+                <span asp-validation-for="LastDonationDate" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-dark">Back to List</a> &nbsp;
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
