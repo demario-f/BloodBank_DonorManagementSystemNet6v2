@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BloodBank_DonorManagementSystem.Web.Data;
+using Microsoft.AspNetCore.Authorization;
+using BloodBank_DonorManagementSystem.Web.Constants;
 
 namespace BloodBank_DonorManagementSystem.Web.Controllers
 {
+    
     public class DonationsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -45,6 +48,7 @@ namespace BloodBank_DonorManagementSystem.Web.Controllers
             return View(donation);
         }
 
+        [Authorize(Roles = Roles.Administrator)]
         // GET: Donations/Create
         public IActionResult Create()
         {
@@ -71,6 +75,7 @@ namespace BloodBank_DonorManagementSystem.Web.Controllers
             return View(donation);
         }
 
+        [Authorize(Roles = Roles.Administrator)]
         // GET: Donations/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -94,6 +99,7 @@ namespace BloodBank_DonorManagementSystem.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.Administrator)]
         public async Task<IActionResult> Edit(int id, [Bind("DonorId,DonationDate,BloodTypeId,Quantity,ExpirationDate,Id")] Donation donation)
         {
             if (id != donation.Id)
@@ -126,6 +132,7 @@ namespace BloodBank_DonorManagementSystem.Web.Controllers
             return View(donation);
         }
 
+        [Authorize(Roles = Roles.Administrator)]
         // GET: Donations/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -149,6 +156,7 @@ namespace BloodBank_DonorManagementSystem.Web.Controllers
         // POST: Donations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.Administrator)]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Donations == null)

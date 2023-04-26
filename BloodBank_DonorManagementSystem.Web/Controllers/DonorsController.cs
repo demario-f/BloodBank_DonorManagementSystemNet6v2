@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using BloodBank_DonorManagementSystem.Web.Data;
 using AutoMapper;
 using BloodBank_DonorManagementSystem.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BloodBank_DonorManagementSystem.Web.Controllers
 {
+    [Authorize]
     public class DonorsController : Controller
     {
         private readonly ApplicationDbContext _context;

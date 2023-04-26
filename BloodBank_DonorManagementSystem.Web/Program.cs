@@ -3,6 +3,8 @@ using BloodBank_DonorManagementSystem.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using BloodBank_DonorManagementSystem.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddTransient<IEmailSender>(s => new EmailSender("localhost", 25, "no-reply@BloodBank_DonorManagement.com"));
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
