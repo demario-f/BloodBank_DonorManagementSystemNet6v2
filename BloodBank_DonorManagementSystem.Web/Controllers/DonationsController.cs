@@ -11,7 +11,7 @@ using BloodBank_DonorManagementSystem.Web.Constants;
 
 namespace BloodBank_DonorManagementSystem.Web.Controllers
 {
-    
+    [Authorize]
     public class DonationsController : Controller
     {
         private readonly ApplicationDbContext _context;

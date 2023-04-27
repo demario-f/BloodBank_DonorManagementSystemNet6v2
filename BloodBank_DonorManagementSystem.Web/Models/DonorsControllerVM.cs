@@ -36,7 +36,7 @@ namespace BloodBank_DonorManagementSystem.Web.Models
         public BloodType BloodType { get; set; }
         [Display(Name = "Blood Group")]
         [Required]
-        public int BloodGroupNameId { get; set; }
+        public string BloodGroupNameId { get; set; }
 
         [Display(Name = "Last Donation Date")]
         public DateTime LastDonationDate { get; set; }
