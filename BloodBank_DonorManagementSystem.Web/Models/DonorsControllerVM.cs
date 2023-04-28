@@ -33,10 +33,10 @@ namespace BloodBank_DonorManagementSystem.Web.Models
 
 
         [ForeignKey("BloodGroupNameId")]
-        public BloodType BloodType { get; set; }
+        public BloodType? BloodType { get; set; }
         [Display(Name = "Blood Group")]
         [Required]
-        public string BloodGroupNameId { get; set; }
+        public int BloodGroupNameId { get; set; }
 
         [Display(Name = "Last Donation Date")]
         public DateTime LastDonationDate { get; set; }
