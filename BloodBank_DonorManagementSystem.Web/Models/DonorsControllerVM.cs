@@ -14,7 +14,7 @@ namespace BloodBank_DonorManagementSystem.Web.Models
 
         [Display(Name = "Surname Name")]
         [Required]
-        public string? LastName { get; set; }
+        public string LastName { get; set; }
 
         public string Gender { get; set; }
 
